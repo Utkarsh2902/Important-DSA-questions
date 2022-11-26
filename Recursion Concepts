@@ -56,3 +56,31 @@ int main()
     return 0;
 }
 
+
+
+
+
+
+😎WAP for Fibonachi series using Recursion and Function
+#include <iostream>
+using namespace std;
+int fibo(int n)
+{
+    if(n==2||n==1)
+    {
+        return 1;
+    }
+    else
+    {
+        int partialans=fibo(n-1);
+        int partialans2=fibo(n-2);
+        return partialans2+partialans;
+    }
+}
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<fibo(n);
+    return 0;
+}

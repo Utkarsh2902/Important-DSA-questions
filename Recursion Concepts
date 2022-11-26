@@ -1,0 +1,30 @@
+😎WAP for Factorial using Recursion and Function
+#include <bits/stdc++.h>
+using namespace std;
+int factorial(int n)
+{
+ if(n==0)
+ {
+     return 1;
+ }
+ else
+ {
+     int partialval=factorial(n-1);
+     return n*partialval;
+ }
+}
+int main()
+{
+  int n;
+  cin>>n;
+  if(n<0)
+  {
+      cout<<"error";
+  }
+  else
+  {
+      cout<<factorial(n);
+  }
+    return 0;
+}
+

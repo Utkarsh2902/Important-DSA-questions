@@ -1,0 +1,34 @@
+😎WAP of normal implimentation of Linked list
+
+
+#include <bits/stdc++.h>
+using namespace std;
+class Node
+{
+    public:
+    int data;
+    Node*next;
+    Node(int val)
+    {
+    data=val;
+    };
+    void prin(Node* head)
+    {
+     auto curr=head;
+     while(curr)
+     {
+         cout<<curr->data<<" ";
+         curr=curr->next;
+     }
+    }
+};
+int main()
+{
+    Node* a=new Node(1);
+    Node* b=new Node(2);
+    Node* c=new Node(3);
+    (*a).next=b;
+    b->next=c;
+   a->prin(a);
+    return 0;
+}

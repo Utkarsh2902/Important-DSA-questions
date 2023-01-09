@@ -84,3 +84,57 @@ int main()
     cout<<fibo(n);
     return 0;
 }
+
+
+😎WAP of Basics of Recursion(print 1 to n without loop)(tail recursion)
+ #include <iostream>
+using namespace std;
+void printnumber(int n)
+{
+    if(n<1)
+    {
+      return;
+    }
+    else
+    {
+    cout<<n;
+     printnumber(n-1);
+    }
+    
+}
+
+int main()
+{
+int n=10;
+printnumber(n);
+    return 0;
+}
+
+
+
+
+
+😎WAP of Basics of Recursion(print 1 to n without loop)(head recursion)
+ #include <iostream>
+using namespace std;
+void printnumber(int n)
+{
+    if(n<1)
+    {
+      return;
+    }
+    else
+    {
+     printnumber(n-1);
+    cout<<n;
+    }
+    
+}
+
+int main()
+{
+int n=10;
+printnumber(n);
+    return 0;
+}
+

@@ -167,3 +167,29 @@ vector<vector<int>> helper(vector<int> &nums,int i)
 };
 
 
+
+
+😎WAP of permutations 
+
+class Solution {
+public:
+vector<vector<int>> ans;
+void helper(vector<int> &nums,int pos){
+if(pos>=nums.size()){
+ans.push_back(nums);
+}
+for(int i=pos;i<nums.size();i++)
+{
+    swap(nums[i],nums[pos]);
+   helper(nums,pos+1);
+    swap(nums[i],nums[pos]);    //backtracking step
+    
+}
+}
+    vector<vector<int>> permute(vector<int>& nums) {
+        helper(nums,0);
+        return ans;
+    }
+};
+
+

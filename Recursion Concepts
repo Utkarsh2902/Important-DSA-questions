@@ -141,7 +141,7 @@ printnumber(n);
 
 
 
-😎WAP of subset(POWER set)
+😎WAP of subset(POWER set)(Method 1)
 
 class Solution {
 public:
@@ -169,6 +169,42 @@ vector<vector<int>> helper(vector<int> &nums,int i)
 
 
 
+
+
+😎WAP of subset(POWER set)(Method 2)
+
+
+class Solution {
+public:
+ vector<vector<int>> ans;
+vector<int> sub;
+void helper(vector<int> &nums,int pos)
+{
+     if(pos==nums.size())  {
+    ans.push_back(sub);
+    return;
+    }
+    
+        sub.push_back(nums[pos]);//include
+        helper(nums,pos+1);
+
+        sub.pop_back();    //not include
+        helper(nums,pos+1);
+
+
+}
+    vector<vector<int>> subsets(vector<int>& nums) {
+     helper(nums,0);
+     return ans;
+    }
+};
+
+
+
+
+
+
+
 😎WAP of permutations 
 
 class Solution {
@@ -191,6 +227,7 @@ for(int i=pos;i<nums.size();i++)
         return ans;
     }
 };
+
 
 
 

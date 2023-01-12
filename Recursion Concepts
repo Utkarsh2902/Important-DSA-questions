@@ -205,6 +205,48 @@ void helper(vector<int> &nums,int pos)
 
 
 
+
+😎WAP of UNIQUE subset(POWER set)(Method 2)
+
+class Solution {
+public:
+vector<vector<int>> ans;
+vector<int> sub;
+void helper(vector<int> &nums,int pos)
+{
+if(pos==nums.size())
+{
+ans.push_back(sub);
+return;
+}
+///to include
+
+sub.push_back(nums[pos]);
+helper(nums,pos+1);
+sub.pop_back();
+
+
+//to skip
+while(pos+1<nums.size()&&nums[pos]==nums[pos+1]) pos++;
+
+helper(nums,pos+1);
+
+}
+    vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        helper(nums,0);
+        return ans;
+        
+    }
+};
+
+
+
+
+
+
+
+
 😎WAP of permutations 
 
 class Solution {

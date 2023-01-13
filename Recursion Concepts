@@ -276,6 +276,10 @@ for(int i=pos;i<nums.size();i++)
 
 
 
+
+
+
+
 😎WAP of UNIQUE permutations 
 
 class Solution {
@@ -305,6 +309,11 @@ void helper(vector<int>& nums,int pos)
         return ans;
     }
 };
+
+
+
+
+
 
 
 
@@ -342,3 +351,50 @@ helper(pos+1,n,k);
     }
 };
 
+
+
+
+
+
+
+😎WAP of Combination Sum
+
+
+
+class Solution {
+public:
+vector<vector<int>> ans;
+vector<int> com;
+void helper(vector<int>& candidates, int target,int pos,int sumnow)
+{
+    if(target==sumnow)
+    {
+        ans.push_back(com);
+        return;
+    }
+    if(pos>=candidates.size())
+    {
+    return ;
+    }
+    if(sumnow>target)
+    {
+        return;
+    }
+     
+     //skip
+     helper(candidates,target,pos+1,sumnow);
+
+    //pick
+    sumnow+=candidates[pos];
+    com.push_back(candidates[pos]);
+    helper(candidates,target,pos,sumnow);
+    sumnow+=candidates[pos];
+    com.pop_back();
+    
+}
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        int sumnow=0;
+        helper(candidates,target,0,sumnow);
+        return ans;
+    }
+};

@@ -404,7 +404,7 @@ void helper(vector<int>& candidates, int target,int pos,int sumnow)
 
 
 
-😎WAP of Combination Sum
+😎WAP of Combination SumII
 
 
 class Solution {

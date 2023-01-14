@@ -398,3 +398,51 @@ void helper(vector<int>& candidates, int target,int pos,int sumnow)
         return ans;
     }
 };
+
+
+
+
+
+
+😎WAP of Combination Sum
+
+
+class Solution {
+public:
+vector<vector<int>> ans;
+vector<int> com;
+void helper(vector<int>& candidates, int target,int sumnow,int pos)
+{
+ if(sumnow==target) 
+ {
+     ans.push_back(com);
+     return ;
+ }
+ if(sumnow>target)
+ {
+     return;
+ }
+ if(pos==candidates.size())
+ {
+     return;
+ }
+ 
+ //include
+
+  com.push_back(candidates[pos]);
+  sumnow+=candidates[pos];
+  helper(candidates,target,sumnow,pos+1);
+  com.pop_back();
+  sumnow-=candidates[pos];
+  //skip
+while(pos+1<candidates.size()&&candidates[pos]==candidates[pos+1]) pos++;
+  helper(candidates,target,sumnow,pos+1); 
+}
+    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+        int sumnow=0;
+        sort(candidates.begin(),candidates.end());
+     helper(candidates,target,sumnow,0);
+     return ans;   
+    }
+};
+Console

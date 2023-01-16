@@ -445,4 +445,55 @@ while(pos+1<candidates.size()&&candidates[pos]==candidates[pos+1]) pos++;
      return ans;   
     }
 };
-Console
+
+
+
+
+
+
+
+😎WAP of Combination SumII
+
+
+class Solution {
+public:
+vector<vector<int>> ans;
+vector<int> com;
+void helper(int k, int n,int sumnow,int pos){
+    if(k==0)
+    {
+        if(sumnow==n)
+        {
+        ans.push_back(com);
+        }
+        return;
+    }
+    if(pos==10)
+    {
+       return;
+    }
+    if(sumnow>n)
+    {
+        return;
+    }
+
+//take
+sumnow+=pos;
+com.push_back(pos);
+helper(k-1,n,sumnow,pos+1);
+sumnow-=pos;
+com.pop_back();
+//skip
+
+helper(k,n,sumnow,pos+1);
+
+}
+    vector<vector<int>> combinationSum3(int k, int n) { 
+       int sumnow=0;
+       int pos;
+       helper(k,n,sumnow,1);
+       return ans;
+    }
+};
+
+
